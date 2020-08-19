@@ -22,17 +22,18 @@ public class Day02_DriverOdev {
         String titleGoogle = driver.getTitle();
         System.out.println(titleGoogle);
         // 3 - daha sonra youtube.com'a gidelim.
-        driver.navigate().to("http://techproed.com");
+        driver.navigate().to("http://youtube.com");
         // 4 - sayfanın title'ını ve url'ini alalım ekrana yazdıralım.
         String titleYoutube = driver.getTitle();
-        String urlTech = driver.getCurrentUrl();
+        String urlYoutube = driver.getCurrentUrl();
         System.out.println(titleYoutube);
-        System.out.println(urlTech);
+        System.out.println(urlYoutube);
         // 5 - google.com'a geri gelelim ve sayfanın url'ini alıp ekrana yazdıralım.
         driver.navigate().back();
         String urlGoogle = driver.getCurrentUrl();
         System.out.println(urlGoogle);
         // 6 - driver'ımızı kapatalım.
         driver.quit();
+
     }
 }
