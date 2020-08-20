@@ -30,6 +30,7 @@ public class Day02_Eksersiz {
             System.out.println("Exception (URL) Adres: "+expectedUrl);
         }
         driver.quit();
-    }
+
+        }
 
 }

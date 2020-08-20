@@ -9,33 +9,38 @@ import java.util.concurrent.TimeUnit;
 
 public class Day03_LocatorsGiris {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:/Users/Asus/Documents/Selenium dependencies/drivers/chromedriver.exe");
-        WebDriver driver =new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
-            driver.get("http://a.testaddressbook.com");  //web sayfamiza gittik
-            driver.manage().window().maximize();
-            // <a id="sign-in" class="nav-item nav-link" data-test="sign-in" href="/sign_in">Sign in</a>
-            //ilk elemanimizi bulalim.
-            //sitring=webElement
-
+        // Java projemize, chromedriver'ı tanıttık.
+        System.setProperty("webdriver.chrome.driver", "C:/Users/Asus/Documents/Selenium dependencies/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
+        driver.get("http://a.testaddressbook.com");  //web sayfamiza gittik
+        driver.manage().window().maximize();
+        // <a id="sign-in" class="nav-item nav-link" data-test="sign-in" href="/sign_in">Sign in</a>
+        //ilk elemanimizi bulalim.
+        //sitring=webElement
+        // ilk webelementimizi buluyoruz.
+        // "Hamza" -> String
+        // Web sayfasındaki tüm elamanlar -> WebElement
+        //bir web sayfasinda clasi ayni olabilir fakat elementlerin id si benzersiz olur
+        // webelementimizi id kullanarak bulduk.
         WebElement signInLink = driver.findElement(By.id("sign-in")); //webElementini bulduk
         signInLink.click(); //webElementinde sing-in 'e butonuna bastik
         //<input type="email" class="form-control" placeholder="Email" data-test="email" name="session[email]" id="session_email">
-       // Thread.sleep(2000);
-        WebElement eMailKutusu = driver.findElement(By.id("session_email"));
-        eMailKutusu.sendKeys("testtechproed@gmail.com");
+        // Thread.sleep(2000);
+        WebElement eMailKutusu = driver.findElement(By.id("session_email"));  //email kutusunu bulalım.
+        eMailKutusu.sendKeys("testtechproed@gmail.com"); // emailKutusu'nun içerisine yazı gönderiyoruz
         // <input class="form-control" placeholder="Password" data-test="password" type="password" name="session[password]" id="session_password">
         WebElement sifreKutusu = driver.findElement(By.id("session_password")); //sifre kutusunu buluyor
         sifreKutusu.sendKeys("Test1234!"); //sifre kutusuna sifreyi yolluyoruz
 
         //<input type="submit" name="commit" value="Sign in" class="btn btn-primary" data-test="submit" data-disable-with="Sign in">
-        WebElement singInClick =driver.findElement(By.name("commit"));
+        WebElement singInClick = driver.findElement(By.name("commit")); // sign in butonunu buluyoruz. // name="commit"
         singInClick.click();
 
-        String baslik=driver.getTitle();
+        String baslik = driver.getTitle();
         if (baslik.equals("Address Book")) {
             System.out.println("Giris Basarili");
-        }else{
+        } else {
             System.out.println("Giris Basarisiz");
         }
         driver.quit();
