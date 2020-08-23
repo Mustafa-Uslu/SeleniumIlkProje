@@ -25,6 +25,6 @@ public class Day04_FindElements {
 
         }
         listem.get(1).click(); //ArrayList gibi kullanilabilir.
-
+        driver.quit();
     }
 }

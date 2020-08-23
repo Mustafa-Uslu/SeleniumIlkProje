@@ -28,6 +28,4 @@ public class Day01_IlkDers {
         webDriver.quit();
     }
 
-
-
 }

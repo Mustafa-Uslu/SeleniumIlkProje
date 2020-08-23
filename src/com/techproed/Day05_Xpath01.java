@@ -9,12 +9,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Day05_Xpath01 {
     public static void main(String[] args) {
+        // Java projemize, chromedriver'ı tanıttık.
         System.setProperty("webdriver.chrome.driver", "C:/Users/Asus/Documents/Selenium dependencies/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/sign_in");
-
+        //      //input[@type='email'] -> xpath'imiz
         WebElement emailKutusu= driver.findElement(By.xpath("//input[@type='email']"));
         emailKutusu.sendKeys("testtechproed@gmail.com");
 

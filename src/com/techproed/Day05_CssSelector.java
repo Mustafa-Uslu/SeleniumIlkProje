@@ -17,7 +17,7 @@ public class Day05_CssSelector {
 
         // cssSelector kullanırken, class value kullanıyorsak .value
         //                          id value kullanıyorsak    #value
-        WebElement emailKutusu = driver.findElement(By.cssSelector("input#session_email"));
+        WebElement emailKutusu = driver.findElement(By.cssSelector("input#session_email")); //id
         emailKutusu.sendKeys("testtechproed@gmail.com");
         // “tagName[attribute name='value']”
         WebElement sifreKutusu = driver.findElement(By.cssSelector("input[placeholder='Password']"));

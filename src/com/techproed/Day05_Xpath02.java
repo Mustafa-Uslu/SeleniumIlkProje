@@ -21,7 +21,6 @@ public class Day05_Xpath02 {
         WebElement welcomeYazi=driver.findElement(By.xpath("//h1"));
         System.out.println(welcomeYazi.getText());
 
-
         driver.quit();
     }
 }

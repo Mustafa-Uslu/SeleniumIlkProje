@@ -13,7 +13,6 @@ public class Day0_TestSayfasi {
         driver.get("http://www.google.com");  //web sayfamiza gittik
         driver.manage().window().maximize();
 
-
-
+        driver.quit();
     }
 }
